@@ -34,7 +34,7 @@ def main():
     labels = [label['name'] for label in label_list if label['type'] == 'user']
 
     filter_frame = [[
-        sg.OptionMenu(['from', 'To', 'subject'], disabled=True, key='filter_type', size=(5, 1))
+        sg.OptionMenu(['from', 'to', 'subject'], disabled=True, key='filter_type', size=(5, 1))
         , sg.InputText(disabled=True, key='filter_txt', default_text='', size=(20, 1))
     ]]
     layout = [
@@ -89,7 +89,7 @@ def main():
                     if label_id == '':
                         label_result = g_mail.create_label(input_label)
                         if type(label_result) is dict:
-                            success_msg += 'ラベル「{}」の作成に成功しました。'.format(input_label)
+                            success_msg += 'ラベル「{}」の作成に成功しました。\n'.format(input_label)
                             # ラベルリスト更新
                             labels = [label['name'] for label in g_mail.label_list() if label['type'] == 'user']
                             window['label'].update(value=label_result['name'], values=labels)
@@ -103,7 +103,7 @@ def main():
                         filter_result = g_mail.create_filter(input_filter_type, input_filter_txt, label_id)
 
                     if type(filter_result) is dict:
-                        success_msg += 'フィルター「{}:{}」の作成に成功しました。'.format(input_filter_type, input_filter_txt)
+                        success_msg += 'フィルター「{}:{}」の作成に成功しました。\n'.format(input_filter_type, input_filter_txt)
                     else:
                         error_msg += filter_result
                 else:
