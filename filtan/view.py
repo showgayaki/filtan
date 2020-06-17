@@ -41,7 +41,7 @@ def main():
         [sg.Text('ラベル'), sg.Combo(labels, key='label', size=(25, 1))]
         , [sg.Checkbox('フィルターを作成する', key='is_filter', enable_events=True)]
         , [sg.Frame('フィルター', filter_frame, key='filter')]
-        , [sg.Button('作成', key='create')]
+        , [sg.Column([[sg.Button('作成', key='create', size=(6, 1))]], justification='right')]
     ]
 
     window = sg.Window('GMail Filter', layout, finalize=True)
