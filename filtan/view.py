@@ -44,7 +44,7 @@ def main():
         , [sg.Column([[sg.Button('作成', key='create', size=(6, 1))]], justification='right')]
     ]
 
-    window = sg.Window('GMail Filter', layout, finalize=True)
+    window = sg.Window('GMail Filter', layout, finalize=True, icon='icon/filtan.ico')
 
     while True:
         event, values = window.read()

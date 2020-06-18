@@ -9,6 +9,10 @@ verify_ssl = true
 google-api-python-client = "*"
 google-auth-oauthlib = "*"
 pysimplegui = "*"
+cx-freeze = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+filtan = "python filtan/view.py"
