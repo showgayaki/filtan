@@ -12,7 +12,7 @@ pysimplegui = "*"
 cx-freeze = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3"
 
 [scripts]
 filtan = "python filtan/view.py"
