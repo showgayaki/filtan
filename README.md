@@ -1,5 +1,8 @@
 # filtan
+Gmailのラベルとフィルターを作成する。
+
 ![filtan](https://user-images.githubusercontent.com/47170845/84984634-3617ad00-b176-11ea-84b9-7fea38ce56d6.png)
+
 ## 準備
 ### pipenv
 `pip install pipenv`  
@@ -25,6 +28,7 @@ filtanをダウンロード、解凍して「token」フォルダを作成する
 
 ## 実行
 「build\exe.～～」フォルダにfitan.exeができているのでこれを実行すればOK。
+
 ![filtan_exe](https://user-images.githubusercontent.com/47170845/84984384-aa9e1c00-b175-11ea-8b33-0cad567c635b.png)
 
 デスクトップにショートカットを作成するなど、お好みで。
@@ -35,4 +39,5 @@ filtanをダウンロード、解凍して「token」フォルダを作成する
 
 ### ラベルとフィルター作成
 ![filter](https://user-images.githubusercontent.com/47170845/84985778-5b0d1f80-b178-11ea-8b9a-70f7c93fc350.gif)
+
 既存ラベルへのフィルター作成も可。
