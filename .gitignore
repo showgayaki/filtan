@@ -1,5 +1,7 @@
 __pycache__
 .idea
+.vscode/
 client_id.json
 token.pickle
 .venv
+build/

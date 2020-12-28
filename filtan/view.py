@@ -6,14 +6,17 @@ from gmail import Gmail
 
 def required_files_exists(token_dir, token_paths):
     if not token_dir.is_dir():
-        sg.Popup('Caution'
-                 , '「{}」フォルダが見つかりません。\nアプリケーションを終了します。'
-                 .format(token_dir.name))
+        sg.Popup(
+            'Caution',
+            '「{}」フォルダが見つかりません。\nアプリケーションを終了します。'.format(token_dir.name)
+        )
         return False
     elif not token_paths['pickle_path'].exists() and not token_paths['json_path'].exists():
-        sg.Popup('Caution'
-                 , '{pickle_path}\n''または\n''{json_path}\nが見つかりません。\n''アプリケーションを終了します。'
-                 .format(**token_paths))
+        sg.Popup(
+            'Caution',
+            '{pickle_path}\n''または\n''{json_path}\nが見つかりません。\n''アプリケーションを終了します。'
+            .format(**token_paths)
+        )
         return False
     return True
 
@@ -94,8 +97,11 @@ def main():
                             labels = [label['name'] for label in g_mail.label_list() if label['type'] == 'user']
                             window['label'].update(value=label_result['name'], values=labels)
                             # フィルター作成
-                            filter_result = g_mail.create_filter(input_filter_type, input_filter_txt,
-                                                                 label_result['id'])
+                            filter_result = g_mail.create_filter(
+                                input_filter_type,
+                                input_filter_txt,
+                                label_result['id']
+                            )
                         else:
                             filter_result = None
                             error_msg += label_result

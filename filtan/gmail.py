@@ -52,9 +52,9 @@ class Gmail:
 
     def create_label(self, name):
         label_object = {
-            'messageListVisibility': 'show'
-            , 'name': name
-            , 'labelListVisibility': 'labelShow'
+            'messageListVisibility': 'show',
+            'name': name,
+            'labelListVisibility': 'labelShow'
         }
         try:
             label = self.service.users().labels().create(userId=self.user_id, body=label_object).execute()
@@ -66,10 +66,10 @@ class Gmail:
         mail_filter = {
             'criteria': {
                 filter_type: filter_txt
-            }
-            , 'action': {
-                'addLabelIds': [label_id]
-                , 'removeLabelIds': ['INBOX']
+            },
+            'action': {
+                'addLabelIds': [label_id],
+                'removeLabelIds': ['INBOX']
             }
         }
         try:
